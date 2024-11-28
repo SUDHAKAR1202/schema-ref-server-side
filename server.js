@@ -57,6 +57,10 @@ const Post = model('Post', PostSchema);
     }
   });
 
+  app.get('/', (req, res) => {
+    res.send("Server is running");
+  })
+
   // Retrieve all posts with user data
   app.get('/posts', async (req, res) => {
     try {
