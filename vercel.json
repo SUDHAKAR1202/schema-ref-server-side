@@ -19,8 +19,16 @@
               { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
             ]
           }
-        ]
-      }
+        ],
+        
+            "functions": {
+              "server.js": {
+                "maxDuration": 15
+              }
+            }
+          }
+          
+      
     
     
      
