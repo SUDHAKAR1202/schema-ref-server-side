@@ -4,7 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'https://schema-ref-client-side.vercel.app', 
+      }
+));
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost:27017/myDatabase', {
