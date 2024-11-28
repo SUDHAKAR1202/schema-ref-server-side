@@ -7,8 +7,18 @@ const app = express();
 app.use(cors(
     {
         origin: 'https://schema-ref-client-side.vercel.app', 
+        methods: ['GET', 'POST'], 
+        allowedHeaders: ['Content-Type'], 
       }
 ));
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://schema-ref-client-side.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
+
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost:27017/myDatabase', {
